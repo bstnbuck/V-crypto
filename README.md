@@ -1,12 +1,12 @@
 # V-crypto :key:
 
-> **Attention!**
-**V-crypto** has no connection to the official V community and is not maintained by it. 
+> **Attention!**<br>
+**V-crypto** has no connection to the official V community and is not maintained by it.<br> 
 **&rarr; It is not recommended to use the algorithms implemented here productively.** As a non-cryptographer, I cannot fully validate the security.
 
 ---
 
-##### V-crypto provides...
+#### V-crypto provides...
 * a detailed **overview** of important cryptographic algorithms, protocols and formats,
 * the **current implementation status** of the official V community. 
 
