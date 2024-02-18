@@ -9,8 +9,7 @@
 #### V-crypto provides...
 * a detailed **overview** of important cryptographic algorithms, protocols and formats,
 * the **current implementation status** of the official V community. 
-
-Less known but relevant as well as self-developed official algorithms might be published here (see `src/` folder). 
+* less known but relevant as well as self-developed official algorithms that might be published here (see `src/` folder). 
 
 ### Cryptographic algorithms and protocols available in V standard library
 | algorithm | category, info | importance | status | 
@@ -43,17 +42,17 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | algorithm | category, info | importance | status |
 | --- | --- | --- | --- |
 | *blockcipher modes* &rarr; **XTS, CCM, GCM** | XEX-based tweaked-codebook mode with ciphertext stealing, Counter with CBC-MAC (AEAD), Galois/Counter (AEAD) | high | :x: |
-| **Curve25519** | elliptic curve | high, daily use | :x: |
+| **Curve25519** | elliptic curve | high, daily use | thirdparty, non standard :x: [[Git](https://github.com/blackshirt/curve25519)]|
 | **DSA** | legacy signature algorithm | low | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
-| **ECDH** | asymmetric crypto based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)], [[2](https://github.com/vlang/v/issues/8547)]) :x: |
+| **ECDH** | asymmetric crypto based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)], [[2](https://github.com/vlang/v/issues/8547)]), thirdparty, non standard :x: [[Git](https://github.com/blackshirt/ecdhe)] |
 | **ECDSA** | signature algorithm based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
-| HKDF | key derivation function | moderate | :x: |
+| HKDF | key derivation function | moderate | thirdparty :x: [[Git](https://github.com/blackshirt/hkdf)]|
 | **P-224/256/384**/(521) | elliptic curves (NIST) | high, daily use | :x: |
 | **PBKDF2** | key derivation function | high | :x: |
-| **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :yellow_circle: [[Git](https://github.com/LvMalware/rsa-vlang)] [[Git](https://github.com/LvMalware/vrsa-package)] |
+| **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :x: [[Git](https://github.com/LvMalware/vrsa-package)] |
 | **SHA3** | hash-algorithm | moderate | (see [[2](https://github.com/vlang/v/issues/8547)]) :x: |
 | **SSH** | network protocol | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]) :x: |
-| **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)]|
+| **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
 ### Additional cryptographic algorithms implemented/planned in V-crypto (see `src/`)
@@ -68,14 +67,14 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | Camellia | symmetric block cipher | low | :x: |
 | CAST | symmetric block cipher | moderate | :x: |
 | **Curve448** | elliptic curve | high | :x: |
-| **Ed448** | signature algorithm based on asymmetric crypto | high | :x: |
+| **Ed448** | signature algorithm based on elliptic curves | high | :x: |
 | Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
 | MD4 | legacy hash-algorithm | low | :x: |
-| **RIPEMD160** | hash-algorithm | moderate | :x: |
+| **RIPEMD160** | legacy hash-algorithm | moderate | :x: |
 | **Salsa20** | symmetric stream cipher | high | :x: |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
 | TEA | legacy block cipher | low | :x: |
 | **Twofisch** | symmetric block cipher | moderate | :x: |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 16-02-2024
+> Last Update: 18-02-2024
