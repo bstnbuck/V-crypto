@@ -78,11 +78,11 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | Grain v1 | symmetric stream cipher | moderate | :x: |
 | HC-(128,256) | symmetric stream cipher | moderate | :x: |
 | Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
-| MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/src/md4)] |
+| MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/md4)] |
 | **RIPEMD160** | legacy hash-algorithm | moderate | :x: |
 | **Salsa20** | symmetric stream cipher | high | :x: |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
-| TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/src/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/src/xtea)]|
+| TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/xtea)]|
 | **Twofisch** | symmetric block cipher | moderate | :x: |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
