@@ -4,12 +4,14 @@
 **V-crypto** has no connection to the official V community and is not maintained by it.<br> 
 **&rarr; It is not recommended to use the algorithms implemented here productively.** As a non-cryptographer, I cannot fully validate the security.
 
+>**Contributions welcome!**
+
 ---
 
 #### V-crypto provides...
 * a detailed **overview** of important cryptographic algorithms, protocols and formats,
 * the **current implementation status** of the official V community. 
-* less known but relevant as well as self-developed official algorithms that might be published here (see `src/` folder). 
+* less known but relevant as well as self-developed official algorithms that might be published here. 
 
 ### Cryptographic algorithms and protocols available in V standard library
 | algorithm | category, info | importance | status | 
@@ -35,6 +37,8 @@
 | Poly1305 | message authentication code | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/poly1305)]|
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
+> Last Update: 18-02-2024
+
 ### Cryptographic algorithms and protocols (not officially) planned for V standard library
 
 The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of these algorithms.
@@ -55,26 +59,31 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-### Additional cryptographic algorithms implemented/planned in V-crypto (see `src/`)
+> Last Update: 18-02-2024
+
+### Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
 The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of these algorithms.
 
 | algorithm | category, info | importance | status | 
 | --- | --- | --- | --- |
 | **argon2** | hash-algorithm / key derivation function | high | :x: |
-| *blockcipher modes* &rarr; ECB, EAX, IGE | Electronic-Codebook, encrypt-then-authenticate-then-translate, Infinite Garble Extension | moderate | :x: |
+| Ascon | lightweight AEAD | moderate | :x: |
+| *blockcipher modes* &rarr; ECB, EAX, IGE, OCB | Electronic-Codebook, encrypt-then-authenticate-then-translate, Infinite Garble Extension, Offset codebook mode (AEAD) | moderate | :x: |
 | **brainpoolP(256,384,521)r1** | elliptic curve | high | :x: |
 | Camellia | symmetric block cipher | low | :x: |
 | CAST | symmetric block cipher | moderate | :x: |
 | **Curve448** | elliptic curve | high | :x: |
 | **Ed448** | signature algorithm based on elliptic curves | high | :x: |
+| Grain v1 | symmetric stream cipher | moderate | :x: |
+| HC-(128,256) | symmetric stream cipher | moderate | :x: |
 | Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
-| MD4 | legacy hash-algorithm | low | :x: |
+| MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/src/md4)] |
 | **RIPEMD160** | legacy hash-algorithm | moderate | :x: |
 | **Salsa20** | symmetric stream cipher | high | :x: |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
-| TEA | legacy block cipher | low | :x: |
+| TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/src/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/src/xtea)]|
 | **Twofisch** | symmetric block cipher | moderate | :x: |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 18-02-2024
+> Last Update: 21-02-2024
