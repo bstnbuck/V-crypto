@@ -13,7 +13,7 @@
 * the **current implementation status** of the official V community. 
 * less known but relevant as well as self-developed official algorithms that might be published here. 
 
-### Cryptographic algorithms and protocols available in V standard library
+## Cryptographic algorithms and protocols available in V standard library
 | algorithm | category, info | importance | status | 
 | --- | --- | --- | --- |
 | **AES** | symmetric block cipher | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/aes)]|
@@ -39,7 +39,7 @@
 
 > Last Update: 18-02-2024
 
-### Cryptographic algorithms and protocols (not officially) planned for V standard library
+## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
 The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of these algorithms.
 
@@ -61,7 +61,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 
 > Last Update: 18-02-2024
 
-### Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
+## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
 The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of these algorithms.
 
@@ -87,3 +87,27 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
 > Last Update: 21-02-2024
+---
+## v_crypto
+### Installation
+```bash
+v install https://github.com/bstnbuck/V-crypto
+```
+
+### Usage
+```v
+import v_crypto.md4
+
+fn main(){
+    // short way to get MD4 hex hash
+    println("`test` hashed with MD4 is: "+md4.hexhash("test"))
+
+    // long way to get bytes array
+    mut d := md4.new()
+    blocksize, bytes_hash := d.checksum('test'.bytes())
+    println("input produces a bytes checksum $bytes_hash.hex() with block size: $blocksize")
+
+    d.reset() // with reset, a new empty checksum can be produced
+    _, _ := d.checksum('Hi from V_crypto. This is an example of a long long line.'.bytes())
+}
+```
