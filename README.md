@@ -86,7 +86,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **Twofisch** | symmetric block cipher | moderate | :x: |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 21-02-2024
+> Last Update: 18-04-2024
 ---
 ## v_crypto
 ### Installation
