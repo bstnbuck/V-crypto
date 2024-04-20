@@ -2,7 +2,7 @@
 
 > **Attention!**<br>
 **V-crypto** has no connection to the official V community and is not maintained by it.<br> 
-**&rarr; It is not recommended to use the algorithms implemented here productively.** As a non-cryptographer, I cannot fully validate the security.
+**&rarr; It is not recommended to use the algorithms implemented here productively until the status is *implemented*.** As a non-cryptographer, I cannot fully validate the security.
 
 >**Contributions welcome!**
 
@@ -80,13 +80,13 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
 | MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/md4)] |
 | **RIPEMD160** | legacy hash-algorithm | moderate | :x: |
-| **Salsa20** | symmetric stream cipher | high | :x: |
+| **(X)Salsa20** | symmetric stream cipher | high | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/salsa20)] |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
 | TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/xtea)]|
 | **Twofisch** | symmetric block cipher | moderate | :x: |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 18-04-2024
+> Last Update: 20-04-2024
 ---
 ## v_crypto
 ### Installation
@@ -95,6 +95,8 @@ v install https://github.com/bstnbuck/V-crypto
 ```
 
 ### Usage
+In general, the functionality is easy to understand based on the tests of the respective algorithm. For larger algorithms, a README file with the most important functions follows.
+
 ```v
 import v_crypto.md4
 
@@ -111,3 +113,5 @@ fn main(){
     _, _ := d.checksum('Hi from V_crypto. This is an example of a long long line.'.bytes())
 }
 ```
+
+> Please report security related issues to: bstnbuck (at) proton (dot) me
