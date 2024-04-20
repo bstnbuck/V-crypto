@@ -14,18 +14,20 @@ fn main(){
     plain := hex.decode('766572792073686f7274206d7367')! // very short msg
 
      // short way to encrypt the given string `plain` using key and nonce
-    println("`very short msg` encrypted with Salsa20 is: " + salsa20.encrypt(key, nonce, plain)!) // >>> 839fa746598ab737b6da80bd9efd <<<
+    println("`very short msg` encrypted with Salsa20 is: " + salsa20.encrypt(key, nonce, plain)!.hex()) // >>> 839fa746598ab737b6da80bd9efd <<<
 
-    ciphertext := 'some-ciphertext'.bytes()
+    ciphertext := hex.decode('106e957201591043770916ab2f17')!
 
     // decrypt a string `ciphertext` with a given key, nonce, a different counter and number of Salsa20 rounds
-    mut dec := []u8{len: plain4.len}
-    mut c := new_cipher(key, nonce)!
+    mut dec := []u8{len: ciphertext.len}
+    mut c := salsa20.new_cipher(key, nonce)!
     // if only the counter should be different
     // c.set_counter(45)
     c.rekey(key, nonce, 45, 8)! // key, nonce, counter, rounds
     c.xor_key_stream(mut dec, ciphertext)
-    println("The decrypted ciphertext with initial counter 48 and 8 rounds is:" +dec.hex())
+    println("The decrypted ciphertext with initial counter 48 and 8 rounds is: " +dec.hex())
+	same := dec == plain
+	println("The expected and actual plaintext are the same: $same")
 }
 ```
 
@@ -40,15 +42,17 @@ fn main(){
     plain := hex.decode('766572792073686f7274206d7367')! // very short msg
     
     // short way to encrypt the given string `plain` using key and nonce
-    println("`very short msg` encrypted with XSalsa20 is: " + salsa20.encrypt(key, nonce, plain)!) // >>> d0df8be036e7d95728040244ef2f <<<
+    println("`very short msg` encrypted with XSalsa20 is: " + salsa20.encrypt(key, nonce, plain)!.hex()) // >>> d0df8be036e7d95728040244ef2f <<<
 
-    ciphertext := 'some-ciphertext'.bytes()
+    ciphertext := hex.decode('306077c4365624ab0e17714fd9f0')!
 
     // decrypt a string `ciphertext` with a given key, nonce, a different counter and number of Salsa20 rounds
-    mut dec := []u8{len: plain4.len}
-    mut c := new_cipher(key, nonce)!
-    c.rekey(key, nonce, 45, 8)! // key, nonce, counter, rounds
+    mut dec := []u8{len: ciphertext.len}
+    mut c := salsa20.new_cipher(key, nonce)!
+    c.rekey(key, nonce, 45, 12)! // key, nonce, counter, rounds
     c.xor_key_stream(mut dec, ciphertext)
-    println("The decrypted ciphertext with initial counter 48 and 8 rounds is:" +dec.hex())
+    println("The decrypted ciphertext with initial counter 48 and 8 rounds is: " +dec.hex())
+	same := dec == plain
+	println("The expected and actual plaintext are the same: $same")
 }
 ```
