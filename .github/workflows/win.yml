@@ -18,4 +18,4 @@ jobs:
         cd v
         .\make.bat -tcc
     - name: test algorithms
-      run: ./v/v test md4/ tea/ xtea/ _cipher/ salsa20/
+      run: ./v/v test md4/ tea/ xtea/ _cipher/ salsa20/ ripemd160/

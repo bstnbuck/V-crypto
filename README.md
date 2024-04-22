@@ -79,14 +79,14 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | HC-(128,256) | symmetric stream cipher | moderate | :x: |
 | Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
 | MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/md4)] |
-| **RIPEMD160** | legacy hash-algorithm | moderate | :x: |
+| **RIPEMD160** | legacy hash-algorithm | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/ripemd160)] |
 | **(X)Salsa20** | symmetric stream cipher | high | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/salsa20)] |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
 | TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/xtea)]|
 | **Twofisch** | symmetric block cipher | moderate | :x: |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 20-04-2024
+> Last Update: 22-04-2024
 ---
 ## v_crypto
 ### Installation
