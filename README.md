@@ -69,7 +69,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | --- | --- | --- | --- |
 | **argon2** | hash-algorithm / key derivation function | high | :x: |
 | Ascon | lightweight AEAD | moderate | :x: |
-| *blockcipher modes* &rarr; ECB, EAX, IGE, OCB | Electronic-Codebook, encrypt-then-authenticate-then-translate, Infinite Garble Extension, Offset codebook mode (AEAD) | moderate | experimental (only ECB) :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/_cipher)] |
+| *blockcipher modes* &rarr; ECB, EAX, IGE, OCB | Electronic-Codebook, encrypt-then-authenticate-then-translate, Infinite Garble Extension, Offset codebook mode (AEAD) | moderate | experimental (only ECB, IGE) :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/_cipher)] |
 | **brainpoolP(256,384,521)r1** | elliptic curve | high | :x: |
 | Camellia | symmetric block cipher | low | :x: |
 | CAST | symmetric block cipher | moderate | :x: |
