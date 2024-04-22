@@ -83,7 +83,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **(X)Salsa20** | symmetric stream cipher | high | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/salsa20)] |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
 | TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/xtea)]|
-| **Twofisch** | symmetric block cipher | moderate | :x: |
+| **Twofisch** | symmetric block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/twofish)] |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
 > Last Update: 22-04-2024
