@@ -22,7 +22,7 @@
 | **blake3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake3)]|
 | **blowfish** | legacy symmetric block cipher | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blowfish)]|
 | *blockcipher modes* &rarr; **CBC, CFB, CTR, OFB** | Cipher-Block-Chaining, Cipher-Feedback, Counter, Output-Feedback | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/cipher)]|
-| **DES** | legacy symmetric block cipher | low | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/des)]|
+| **(3)DES** | legacy symmetric block cipher | low | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/des)]|
 | **Ed25519** | signature algorithm based on elliptic curves | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/ed25519)]|
 | HMAC | hash-based message authentication code | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/hmac)]|
 | **MD5** | legacy hash-algorithm | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/md5)]|
@@ -32,12 +32,13 @@
 | **SHA1** | legacy hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha1)]|
 | **SHA256** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha256)]|
 | **SHA512** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha512)]|
+| **SHA3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha3)]|
 | **ChaCha20** | symmetric stream cipher | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20)]|
 | **ChaCha20-Poly1305** | Authenticated encryption with associated data (AEAD) | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20poly1305)]|
 | Poly1305 | message authentication code | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/poly1305)]|
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
-> Last Update: 18-02-2024
+> Last Update: 01-07-2024
 
 ## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
@@ -54,12 +55,11 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **P-224/256/384**/(521) | elliptic curves (NIST) | high, daily use | :x: |
 | **PBKDF2** | key derivation function | high | :x: |
 | **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :x: [[Git](https://github.com/LvMalware/vrsa-package)] |
-| **SHA3** | hash-algorithm | moderate | (see [[2](https://github.com/vlang/v/issues/8547)]) :x: |
 | **SSH** | network protocol | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]) :x: |
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-> Last Update: 18-02-2024
+> Last Update: 28-05-2024
 
 ## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
@@ -77,16 +77,19 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **Ed448** | signature algorithm based on elliptic curves | high | :x: |
 | Grain v1 | symmetric stream cipher | moderate | :x: |
 | HC-(128,256) | symmetric stream cipher | moderate | :x: |
+| IDEA | symmetric block cipher | low | :x: |
 | Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
 | MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/md4)] |
+| RC6 | symmetric block cipher | low | :x: |
 | **RIPEMD160** | legacy hash-algorithm | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/ripemd160)] |
 | **(X)Salsa20** | symmetric stream cipher | high | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/salsa20)] |
+| **Serpent** | symmetric block cipher | moderate | :x: |
 | **scrypt** | hash-algorithm / key derivation function | high | :x: |
 | TEA, XTEA | legacy block cipher | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/tea)] [[Git](https://github.com/bstnbuck/V-crypto/tree/main/xtea)]|
 | **Twofisch** | symmetric block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/twofish)] |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 22-04-2024
+> Last Update: 01-07-2024
 ---
 ## v_crypto
 ### Installation

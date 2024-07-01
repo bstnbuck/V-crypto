@@ -29,10 +29,10 @@ pub fn (mut x Ecb) encrypt_blocks(mut dst_ []u8, src_ []u8) {
 		mut dst := *dst_
 
 		if src.len % x.block_size != 0 {
-			panic('crypto.cipher: input not full blocks')
+			panic('v_crypto/cipher_: input not full blocks')
 		}
 		if dst.len < src.len {
-			panic('crypto.cipher: output smaller than input')
+			panic('v_crypto/cipher_: output smaller than input')
 		}
 
 		for src.len > 0 {
@@ -52,10 +52,10 @@ pub fn (mut x Ecb) decrypt_blocks(mut dst_ []u8, src_ []u8) {
 		mut dst := *dst_
 
 		if src.len % x.block_size != 0 {
-			panic('crypto.cipher: input not full blocks')
+			panic('v_crypto/cipher_: input not full blocks')
 		}
 		if dst.len < src.len {
-			panic('crypto.cipher: output smaller than input')
+			panic('v_crypto/cipher_: output smaller than input')
 		}
 
 		for src.len > 0 {

@@ -32,7 +32,7 @@ pub fn (mut x Ige) free() {
 // iv must contain two IV's which will be split internal.
 pub fn new_ige(b cipher.Block, iv []u8) !Ige {
 	if iv.len != b.block_size * 2 {
-		return error('v_crypto/_cipher: IV must be: (block size * 2) ${b.block_size * 2} != ${iv.len}')
+		return error('v_crypto/cipher_: IV must be: (block size * 2) ${b.block_size * 2} != ${iv.len}')
 	}
 
 	return Ige{
@@ -49,10 +49,10 @@ pub fn (mut c Ige) block_size() int {
 
 pub fn (mut c Ige) encrypt_blocks(mut dst []u8, src []u8) {
 	if src.len % c.b.block_size != 0 {
-		panic('v_crypto/_cipher: src not full blocks')
+		panic('v_crypto/cipher_: src not full blocks')
 	}
 	if dst.len < src.len {
-		panic('v_crypto/_cipher: dst.len < src.len')
+		panic('v_crypto/cipher_: dst.len < src.len')
 	}
 	if subtle.inexact_overlap(dst[..src.len], src) {
 		panic('crypto.cipher: invalid buffer overlap')
@@ -74,10 +74,10 @@ pub fn (mut c Ige) encrypt_blocks(mut dst []u8, src []u8) {
 
 pub fn (mut c Ige) decrypt_blocks(mut dst []u8, src []u8) {
 	if src.len % c.b.block_size != 0 {
-		panic('v_crypto/_cipher: src not full blocks')
+		panic('v_crypto/cipher_: src not full blocks')
 	}
 	if dst.len < src.len {
-		panic('v_crypto/_cipher: dst.len < src.len')
+		panic('v_crypto/cipher_: dst.len < src.len')
 	}
 	if subtle.inexact_overlap(dst[..src.len], src) {
 		panic('crypto.cipher: invalid buffer overlap')

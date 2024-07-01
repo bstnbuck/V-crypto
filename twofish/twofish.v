@@ -72,7 +72,20 @@ mut:
 	k []u32
 }
 
-// BlockSize returns the Twofish block size, 16 bytes.
+
+// free the resources taken by the Twofish `tf`. Dont use cipher after .free call
+@[unsafe]
+pub fn (mut tf Twofish) free() {
+	$if prealloc {
+		return
+	}
+	unsafe {
+		tf.s.free()
+		tf.k.free()
+	}
+}
+
+// block_size returns the Twofish block size, 16 bytes.
 pub fn (mut tf Twofish) block_size() int {
 	return twofish.block_size
 }
