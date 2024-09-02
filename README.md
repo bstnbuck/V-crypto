@@ -39,7 +39,7 @@
 | Poly1305 | message authentication code | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/poly1305)]|
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
-> Last Update: 01-07-2024
+> Last Update: 02-09-2024
 
 ## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
@@ -59,7 +59,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-> Last Update: 28-05-2024
+> Last Update: 02-09-2024
 
 ## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
