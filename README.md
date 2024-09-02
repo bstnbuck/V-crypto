@@ -26,6 +26,7 @@
 | **Ed25519** | signature algorithm based on elliptic curves | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/ed25519)]|
 | HMAC | hash-based message authentication code | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/hmac)]|
 | **MD5** | legacy hash-algorithm | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/md5)]|
+| **PBKDF2** | key derivation function | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/pbkdf2)] |
 | PEM | encoding format | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/pem)]|
 | **RAND** | random number generator | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/rand)]|
 | RC4 | legacy stream cipher | low | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/rc4)]|
@@ -53,7 +54,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **ECDSA** | signature algorithm based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
 | HKDF | key derivation function | moderate | thirdparty :x: [[Git](https://github.com/blackshirt/hkdf)]|
 | **P-224/256/384**/(521) | elliptic curves (NIST) | high, daily use | :x: |
-| **PBKDF2** | key derivation function | high | :x: |
 | **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :x: [[Git](https://github.com/LvMalware/vrsa-package)] |
 | **SSH** | network protocol | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]) :x: |
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
