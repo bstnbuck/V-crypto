@@ -39,6 +39,7 @@
 | **ChaCha20** | symmetric stream cipher | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20)]|
 | **ChaCha20-Poly1305** | Authenticated encryption with associated data (AEAD) | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20poly1305)]|
 | Poly1305 | message authentication code | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/poly1305)]|
+| SLH-DSA | post-quantum secure signature algorithm (aka. SPHINCS+; hash based) | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/slhdsa)]
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
 > Last Update: 28-09-2024
@@ -54,6 +55,9 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **DSA** | legacy signature algorithm | low | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
 | **ECDH** | asymmetric crypto based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)], [[2](https://github.com/vlang/v/issues/8547)]), thirdparty, non standard :x: [[Git](https://github.com/blackshirt/ecdhe)] |
 | HKDF | key derivation function | moderate | thirdparty :x: [[Git](https://github.com/blackshirt/hkdf)]|
+| HQC | post-quantum secure key encapsulation (code based) | moderate | :x: |
+| ML-KEM | post-quantum secure key encapsulation (aka. Crystals Kyber; lattice based) | high | :x: |
+| ML-DSA | post-quantum secure digital signature (aka. Crystals Dilithium; lattice based) | high | :x: |
 | **P-224/256/384**/(521) | elliptic curves (NIST) | high, daily use | :x: |
 | secp256k1 | elliptic curve | moderate | thirdparty, non standard :x: [[Git](https://github.com/ismyhc/vsecp256k1)] |
 | **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :x: [[Git](https://github.com/LvMalware/vrsa-package)] |
