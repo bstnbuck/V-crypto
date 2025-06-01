@@ -31,6 +31,7 @@
 | PEM | encoding format | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/pem)]|
 | **RAND** | random number generator | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/rand)]|
 | RC4 | legacy stream cipher | low | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/rc4)]|
+| RIPEMD160 | legacy hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/ripemd160)] |
 | **scrypt** | hash-algorithm / key derivation function | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/scrypt)]|
 | **SHA1** | legacy hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha1)]|
 | **SHA256** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha256)]|
@@ -42,7 +43,7 @@
 | SLH-DSA | post-quantum secure signature algorithm (aka. SPHINCS+; hash based) | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/slhdsa)]
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
-> Last Update: 28-09-2024
+> Last Update: 01-06-2025
 
 ## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
