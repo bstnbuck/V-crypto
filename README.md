@@ -39,6 +39,7 @@
 | **SHA3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha3)]|
 | **ChaCha20** | symmetric stream cipher | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20)]|
 | **ChaCha20-Poly1305** | Authenticated encryption with associated data (AEAD) | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20poly1305)]|
+| **Curve25519** | elliptic curve | high, daily use | expiremental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/curve25519)]|
 | Poly1305 | message authentication code | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/poly1305)]|
 | SLH-DSA | post-quantum secure signature algorithm (aka. SPHINCS+; hash based) | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/slhdsa)]
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
@@ -52,7 +53,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | algorithm | category, info | importance | status |
 | --- | --- | --- | --- |
 | *blockcipher modes* &rarr; **XTS, CCM, GCM** | XEX-based tweaked-codebook mode with ciphertext stealing, Counter with CBC-MAC (AEAD), Galois/Counter (AEAD) | high | :x: |
-| **Curve25519** | elliptic curve | high, daily use | thirdparty, non standard :x: [[Git](https://github.com/blackshirt/curve25519)]|
 | **DSA** | legacy signature algorithm | low | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
 | **ECDH** | asymmetric crypto based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)], [[2](https://github.com/vlang/v/issues/8547)]), thirdparty, non standard :x: [[Git](https://github.com/blackshirt/ecdhe)] |
 | HKDF | key derivation function | moderate | thirdparty :x: [[Git](https://github.com/blackshirt/hkdf)]|
