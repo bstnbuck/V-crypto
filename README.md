@@ -37,6 +37,7 @@
 | **SHA256** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha256)]|
 | **SHA512** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha512)]|
 | **SHA3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha3)]|
+| Ascon | lightweight AEAD | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/ascon)] |
 | **ChaCha20** | symmetric stream cipher | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20)]|
 | **ChaCha20-Poly1305** | Authenticated encryption with associated data (AEAD) | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20poly1305)]|
 | **Curve25519** | elliptic curve | high, daily use | expiremental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/curve25519)]|
@@ -75,7 +76,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | algorithm | category, info | importance | status | 
 | --- | --- | --- | --- |
 | **argon2** | hash-algorithm / key derivation function | high | :x: |
-| Ascon | lightweight AEAD | moderate | :x: |
 | *blockcipher modes* &rarr; ECB, EAX, IGE, OCB | Electronic-Codebook, encrypt-then-authenticate-then-translate, Infinite Garble Extension, Offset codebook mode (AEAD) | moderate | experimental (only ECB, IGE) :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/_cipher)] |
 | **brainpoolP(256,384,521)r1** | elliptic curve | high | :x: |
 | Camellia | symmetric block cipher | low | :x: |
