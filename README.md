@@ -53,9 +53,11 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 
 | algorithm | category, info | importance | status |
 | --- | --- | --- | --- |
-| *blockcipher modes* &rarr; **XTS, CCM, GCM** | XEX-based tweaked-codebook mode with ciphertext stealing, Counter with CBC-MAC (AEAD), Galois/Counter (AEAD) | high | :x: |
+| *blockcipher modes* &rarr; **XTS, CCM, GCM** | XEX-based tweaked-codebook mode with ciphertext stealing, Counter with CBC-MAC (AEAD), Galois/Counter (AEAD) | high | thirdparty :x: [[Git](https://github.com/sibkod/aesgcm)] |
+| **Curve448** | elliptic curve | high | thirdparty :yellow_circle: [[Git](https://github.com/blackshirt/curve448)] |
 | **DSA** | legacy signature algorithm | low | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
 | **ECDH** | asymmetric crypto based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)], [[2](https://github.com/vlang/v/issues/8547)]), thirdparty, non standard :x: [[Git](https://github.com/blackshirt/ecdhe)] |
+| **Ed448** | signature algorithm based on elliptic curves | high | :x: |
 | HKDF | key derivation function | moderate | thirdparty :x: [[Git](https://github.com/blackshirt/hkdf)]|
 | HQC | post-quantum secure key encapsulation (code based) | moderate | :x: |
 | ML-KEM | post-quantum secure key encapsulation (aka. Crystals Kyber; lattice based) | high | :x: |
@@ -67,7 +69,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-> Last Update: 28-09-2024
+> Last Update: 06-02-2026
 
 ## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
@@ -80,8 +82,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **brainpoolP(256,384,521)r1** | elliptic curve | high | :x: |
 | Camellia | symmetric block cipher | low | :x: |
 | CAST | symmetric block cipher | moderate | :x: |
-| **Curve448** | elliptic curve | high | :x: |
-| **Ed448** | signature algorithm based on elliptic curves | high | :x: |
 | Grain v1 | symmetric stream cipher | moderate | :x: |
 | HC-(128,256) | symmetric stream cipher | moderate | :x: |
 | IDEA | symmetric block cipher | low | :x: |
