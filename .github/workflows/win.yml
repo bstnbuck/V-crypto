@@ -16,6 +16,6 @@ jobs:
       run: |
         git clone https://github.com/vlang/v
         cd v
-        .\make.bat -tcc
+        .\makev.bat -tcc
     - name: test algorithms
       run: ./v/v test md4/ tea/ xtea/ cipher_/ salsa20/ ripemd160/ twofish/
