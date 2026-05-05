@@ -17,7 +17,7 @@
 | algorithm | category, info | importance | status | 
 | --- | --- | --- | --- |
 | **AES** | symmetric block cipher | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/aes)]|
-| **argon2** | hash-algorithm / key derivation function | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/argon2 |
+| **argon2** | hash-algorithm / key derivation function | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/argon2)] |
 | **bcrypt** | hash-algorithm | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/bcrypt)]|
 | **blake2(b,s)** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake2b)] [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake2s)]|
 | **blake3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake3)]|
