@@ -9,7 +9,7 @@ module xtea
 const num_rounds = 64
 
 // block_to_u32 reads an 8 byte slice into two u32's. The block is treated as big endian.
-fn block_to_u32(src []byte) (u32, u32) {
+fn block_to_u32(src []u8) (u32, u32) {
 	r0 := u32(src[0]) << 24 | u32(src[1]) << 16 | u32(src[2]) << 8 | u32(src[3])
 	r1 := u32(src[4]) << 24 | u32(src[5]) << 16 | u32(src[6]) << 8 | u32(src[7])
 	return r0, r1

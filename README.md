@@ -17,6 +17,7 @@
 | algorithm | category, info | importance | status | 
 | --- | --- | --- | --- |
 | **AES** | symmetric block cipher | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/aes)]|
+| **argon2** | hash-algorithm / key derivation function | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/argon2 |
 | **bcrypt** | hash-algorithm | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/bcrypt)]|
 | **blake2(b,s)** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake2b)] [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake2s)]|
 | **blake3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake3)]|
@@ -41,11 +42,12 @@
 | **ChaCha20** | symmetric stream cipher | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20)]|
 | **ChaCha20-Poly1305** | Authenticated encryption with associated data (AEAD) | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20poly1305)]|
 | **Curve25519** | elliptic curve | high, daily use | expiremental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/curve25519)]|
+| **ML-DSA** | post-quantum secure digital signature (aka. Crystals Dilithium; lattice based) | high | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/mldsa)] |
 | Poly1305 | message authentication code | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/poly1305)]|
 | SLH-DSA | post-quantum secure signature algorithm (aka. SPHINCS+; hash based) | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/slhdsa)]
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
-> Last Update: 01-06-2025
+> Last Update: 04-05-2026
 
 ## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
@@ -61,7 +63,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | HKDF | key derivation function | moderate | thirdparty :x: [[Git](https://github.com/blackshirt/hkdf)]|
 | HQC | post-quantum secure key encapsulation (code based) | moderate | :x: |
 | ML-KEM | post-quantum secure key encapsulation (aka. Crystals Kyber; lattice based) | high | :x: |
-| ML-DSA | post-quantum secure digital signature (aka. Crystals Dilithium; lattice based) | high | :x: |
 | **P-224/256/384**/(521) | elliptic curves (NIST) | high, daily use | :x: |
 | secp256k1 | elliptic curve | moderate | thirdparty, non standard :x: [[Git](https://github.com/ismyhc/vsecp256k1)] |
 | **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :x: [[Git](https://github.com/LvMalware/vrsa-package)] |
@@ -69,7 +70,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-> Last Update: 06-02-2026
+> Last Update: 04-05-2026
 
 ## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
@@ -77,7 +78,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 
 | algorithm | category, info | importance | status | 
 | --- | --- | --- | --- |
-| **argon2** | hash-algorithm / key derivation function | high | :x: |
 | *blockcipher modes* &rarr; ECB, EAX, IGE, OCB | Electronic-Codebook, encrypt-then-authenticate-then-translate, Infinite Garble Extension, Offset codebook mode (AEAD) | moderate | experimental (only ECB, IGE) :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/_cipher)] |
 | **brainpoolP(256,384,521)r1** | elliptic curve | high | :x: |
 | Camellia | symmetric block cipher | low | :x: |
@@ -85,7 +85,6 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | Grain v1 | symmetric stream cipher | moderate | :x: |
 | HC-(128,256) | symmetric stream cipher | moderate | :x: |
 | IDEA | symmetric block cipher | low | :x: |
-| Kyber(512,1024) | key encapsulation mechanism, post-quanten crypto | low | :x: |
 | MD4 | legacy hash-algorithm | low | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/md4)] |
 | RC6 | symmetric block cipher | low | :x: |
 | **RIPEMD160** | legacy hash-algorithm | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/ripemd160)] |
@@ -96,7 +95,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **Twofisch** | symmetric block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/twofish)] |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 01-07-2024
+> Last Update: 04-05-2026
 ---
 ## v_crypto
 ### Installation
