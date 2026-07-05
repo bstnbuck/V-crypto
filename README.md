@@ -22,7 +22,7 @@
 | **blake2(b,s)** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake2b)] [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake2s)]|
 | **blake3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blake3)]|
 | **blowfish** | legacy symmetric block cipher | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/blowfish)]|
-| *blockcipher modes* &rarr; **CBC, CFB, CTR, OFB** | Cipher-Block-Chaining, Cipher-Feedback, Counter, Output-Feedback | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/cipher)]|
+| *blockcipher modes* &rarr; **CBC, CFB, CTR, OFB, GCM** | Cipher-Block-Chaining, Cipher-Feedback, Counter, Output-Feedback, Galois/Counter (AEAD) | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/cipher)]|
 | **(3)DES** | legacy symmetric block cipher | low | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/des)]|
 | **ECDSA** | signature algorithm based on elliptic curves | high, daily use | OpenSSL C Wrapper :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/ecdsa)] |
 | **Ed25519** | signature algorithm based on elliptic curves | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/ed25519)]|
@@ -47,7 +47,7 @@
 | SLH-DSA | post-quantum secure signature algorithm (aka. SPHINCS+; hash based) | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/slhdsa)]
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
-> Last Update: 04-05-2026
+> Last Update: 05-07-2026
 
 ## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
@@ -55,7 +55,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 
 | algorithm | category, info | importance | status |
 | --- | --- | --- | --- |
-| *blockcipher modes* &rarr; **XTS, CCM, GCM** | XEX-based tweaked-codebook mode with ciphertext stealing, Counter with CBC-MAC (AEAD), Galois/Counter (AEAD) | high | thirdparty :x: [[Git](https://github.com/sibkod/aesgcm)] |
+| *blockcipher modes* &rarr; **XTS, CCM** | XEX-based tweaked-codebook mode with ciphertext stealing, Counter with CBC-MAC (AEAD) | high | thirdparty :x: [[Git](https://github.com/sibkod/aesgcm)] |
 | **Curve448** | elliptic curve | high | thirdparty :yellow_circle: [[Git](https://github.com/blackshirt/curve448)] |
 | **DSA** | legacy signature algorithm | low | (see [[1](https://github.com/vlang/v/discussions/12679)]) :x: |
 | **ECDH** | asymmetric crypto based on elliptic curves | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)], [[2](https://github.com/vlang/v/issues/8547)]), thirdparty, non standard :x: [[Git](https://github.com/blackshirt/ecdhe)] |
@@ -70,7 +70,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
 | x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-> Last Update: 04-05-2026
+> Last Update: 05-07-2026
 
 ## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
