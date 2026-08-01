@@ -3,7 +3,7 @@ module salsa20
 // Salsa20 symmetric key stream cipher encryption
 import math.bits
 import crypto.cipher
-import crypto.internal.subtle
+import crypto.subtle
 import encoding.binary
 
 // size of Salsa20 key, 256 bits

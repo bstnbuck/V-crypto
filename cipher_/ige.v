@@ -6,7 +6,7 @@
 module cipher_
 
 import crypto.cipher
-import crypto.internal.subtle
+import crypto.subtle
 
 struct Ige {
 mut:

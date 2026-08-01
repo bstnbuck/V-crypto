@@ -46,7 +46,7 @@ pub fn (x &Xtea) block_size() int {
 // init initializes the cipher context by creating a look up table of precalculated values that are based on the key.
 fn (mut x Xtea) init(key []u8) {
 	mut k := []u32{len: 4}
-	for i := 0; i < k.len; i++ {
+	for i := u32(0); i < k.len; i++ {
 		j := i << 2 // multiply by 4
 		k[i] = u32(key[j + 0]) << 24 | u32(key[j + 1]) << 16 | u32(key[j + 2]) << 8 | u32(key[j + 3])
 	}
