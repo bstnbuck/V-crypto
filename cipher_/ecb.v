@@ -15,8 +15,8 @@ mut:
 // new_ecb returns a Ecb which encrypts/decrypts using the given Block in electronic codebook mode.
 pub fn new_ecb(b cipher.Block) Ecb {
 	return Ecb{
-		b: b
-		out: []u8{len: b.block_size}
+		b:          b
+		out:        []u8{len: b.block_size}
 		block_size: b.block_size
 	}
 }
@@ -25,7 +25,7 @@ pub fn new_ecb(b cipher.Block) Ecb {
 // Please note: `dst` is mutable for performance reasons.
 pub fn (mut x Ecb) encrypt_blocks(mut dst_ []u8, src_ []u8) {
 	unsafe {
-		mut src := src_
+		mut src := src_.clone()
 		mut dst := *dst_
 
 		if src.len % x.block_size != 0 {
@@ -48,7 +48,7 @@ pub fn (mut x Ecb) encrypt_blocks(mut dst_ []u8, src_ []u8) {
 // Please note: `dst` is mutable for performance reasons.
 pub fn (mut x Ecb) decrypt_blocks(mut dst_ []u8, src_ []u8) {
 	unsafe {
-		mut src := src_
+		mut src := src_.clone()
 		mut dst := *dst_
 
 		if src.len % x.block_size != 0 {

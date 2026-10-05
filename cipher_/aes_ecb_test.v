@@ -26,7 +26,7 @@ fn test_aes_ecb() {
 		0xb1, 0xbe, 0xaf, 0xed, 0x1d, 0x23, 0x30, 0x4b, 0x7a, 0x39, 0xf9, 0xf3, 0xff, 0x06, 0x7d,
 		0x8d, 0x8f, 0x9e, 0x24, 0xec, 0xc7]
 
-	block128 := aes.new_cipher(key128)
+	block128 := aes.new_cipher(key128)!
 	mut mode128 := new_ecb(block128)
 	mut dst128 := []u8{len: input.len}
 	mode128.encrypt_blocks(mut dst128, input)
@@ -34,7 +34,7 @@ fn test_aes_ecb() {
 	mode128.decrypt_blocks(mut dst128, dst128.clone())
 	assert dst128.hex() == input.hex()
 
-	block256 := aes.new_cipher(key256)
+	block256 := aes.new_cipher(key256)!
 	mut mode256 := new_ecb(block256)
 	mut dst256 := []u8{len: out256.len}
 	mode256.encrypt_blocks(mut dst256, input)

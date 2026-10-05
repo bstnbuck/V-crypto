@@ -36,9 +36,9 @@ pub fn new_ige(b cipher.Block, iv []u8) !Ige {
 	}
 
 	return Ige{
-		b: b
-		out: []u8{len: b.block_size}
-		iv: iv.clone()
+		b:          b
+		out:        []u8{len: b.block_size}
+		iv:         iv.clone()
 		block_size: b.block_size
 	}
 }
@@ -88,7 +88,7 @@ pub fn (mut c Ige) decrypt_blocks(mut dst []u8, src []u8) {
 	mut r := c.iv[b..].clone()
 
 	for i := 0; i < src.len; i += b {
-		//t := src[i..i + b]
+		// t := src[i..i + b]
 		cipher.xor_bytes(mut dst[i..i + b], src[i..i + b], r)
 		c.b.decrypt(mut dst[i..i + b], dst[i..i + b])
 		cipher.xor_bytes(mut dst[i..i + b], dst[i..i + b], l)

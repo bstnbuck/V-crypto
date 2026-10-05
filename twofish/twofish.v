@@ -72,7 +72,6 @@ mut:
 	k []u32
 }
 
-
 // free the resources taken by the Twofish `tf`. Dont use cipher after .free call
 @[unsafe]
 pub fn (mut tf Twofish) free() {
@@ -204,7 +203,7 @@ pub fn (mut tf Twofish) encrypt(mut dst []u8, src []u8) {
 	id ^= tf.k[3]
 
 	for i := 0; i < 8; i++ {
-		k := tf.k[8 + i * 4..12 + i * 4]
+		k := tf.k[8 + i * 4..12 + i * 4].clone()
 		mut t2 := s2[u8(ib)] ^ s3[u8(ib >> 8)] ^ s4[u8(ib >> 16)] ^ s1[u8(ib >> 24)]
 		mut t1 := s1[u8(ia)] ^ s2[u8(ia >> 8)] ^ s3[u8(ia >> 16)] ^ s4[u8(ia >> 24)] + t2
 		ic = bits.rotate_left_32(ic ^ (t1 + k[0]), -1)
@@ -248,7 +247,7 @@ pub fn (mut tf Twofish) decrypt(mut dst []u8, src []u8) {
 	mut id := tb ^ tf.k[5]
 
 	for i := 8; i > 0; i-- {
-		k := tf.k[4 + i * 4..8 + i * 4]
+		k := tf.k[4 + i * 4..8 + i * 4].clone()
 		mut t2 := s2[u8(id)] ^ s3[u8(id >> 8)] ^ s4[u8(id >> 16)] ^ s1[u8(id >> 24)]
 		mut t1 := s1[u8(ic)] ^ s2[u8(ic >> 8)] ^ s3[u8(ic >> 16)] ^ s4[u8(ic >> 24)] + t2
 		ia = bits.rotate_left_32(ia, 1) ^ (t1 + k[2])
@@ -348,14 +347,10 @@ fn h(inp []u8, key []u8, offset int) u32 {
 			y[2] = twofish.sbox[0][y[2]] ^ key[4 * (4 + offset) + 2]
 			y[3] = twofish.sbox[0][y[3]] ^ key[4 * (4 + offset) + 3]
 
-			y[0] = twofish.sbox[1][twofish.sbox[0][twofish.sbox[0][y[0]] ^ key[4 * (2 + offset) + 0]] ^ key[
-				4 * (0 + offset) + 0]]
-			y[1] = twofish.sbox[0][twofish.sbox[0][twofish.sbox[1][y[1]] ^ key[4 * (2 + offset) + 1]] ^ key[
-				4 * (0 + offset) + 1]]
-			y[2] = twofish.sbox[1][twofish.sbox[1][twofish.sbox[0][y[2]] ^ key[4 * (2 + offset) + 2]] ^ key[
-				4 * (0 + offset) + 2]]
-			y[3] = twofish.sbox[0][twofish.sbox[1][twofish.sbox[1][y[3]] ^ key[4 * (2 + offset) + 3]] ^ key[
-				4 * (0 + offset) + 3]]
+			y[0] = twofish.sbox[1][twofish.sbox[0][twofish.sbox[0][y[0]] ^ key[4 * (2 + offset) + 0]] ^ key[4 * (0 + offset) + 0]]
+			y[1] = twofish.sbox[0][twofish.sbox[0][twofish.sbox[1][y[1]] ^ key[4 * (2 + offset) + 1]] ^ key[4 * (0 + offset) + 1]]
+			y[2] = twofish.sbox[1][twofish.sbox[1][twofish.sbox[0][y[2]] ^ key[4 * (2 + offset) + 2]] ^ key[4 * (0 + offset) + 2]]
+			y[3] = twofish.sbox[0][twofish.sbox[1][twofish.sbox[1][y[3]] ^ key[4 * (2 + offset) + 3]] ^ key[4 * (0 + offset) + 3]]
 		}
 		3 {
 			y[0] = twofish.sbox[1][y[0]] ^ key[4 * (4 + offset) + 0]
@@ -363,24 +358,16 @@ fn h(inp []u8, key []u8, offset int) u32 {
 			y[2] = twofish.sbox[0][y[2]] ^ key[4 * (4 + offset) + 2]
 			y[3] = twofish.sbox[0][y[3]] ^ key[4 * (4 + offset) + 3]
 
-			y[0] = twofish.sbox[1][twofish.sbox[0][twofish.sbox[0][y[0]] ^ key[4 * (2 + offset) + 0]] ^ key[
-				4 * (0 + offset) + 0]]
-			y[1] = twofish.sbox[0][twofish.sbox[0][twofish.sbox[1][y[1]] ^ key[4 * (2 + offset) + 1]] ^ key[
-				4 * (0 + offset) + 1]]
-			y[2] = twofish.sbox[1][twofish.sbox[1][twofish.sbox[0][y[2]] ^ key[4 * (2 + offset) + 2]] ^ key[
-				4 * (0 + offset) + 2]]
-			y[3] = twofish.sbox[0][twofish.sbox[1][twofish.sbox[1][y[3]] ^ key[4 * (2 + offset) + 3]] ^ key[
-				4 * (0 + offset) + 3]]
+			y[0] = twofish.sbox[1][twofish.sbox[0][twofish.sbox[0][y[0]] ^ key[4 * (2 + offset) + 0]] ^ key[4 * (0 + offset) + 0]]
+			y[1] = twofish.sbox[0][twofish.sbox[0][twofish.sbox[1][y[1]] ^ key[4 * (2 + offset) + 1]] ^ key[4 * (0 + offset) + 1]]
+			y[2] = twofish.sbox[1][twofish.sbox[1][twofish.sbox[0][y[2]] ^ key[4 * (2 + offset) + 2]] ^ key[4 * (0 + offset) + 2]]
+			y[3] = twofish.sbox[0][twofish.sbox[1][twofish.sbox[1][y[3]] ^ key[4 * (2 + offset) + 3]] ^ key[4 * (0 + offset) + 3]]
 		}
 		2 {
-			y[0] = twofish.sbox[1][twofish.sbox[0][twofish.sbox[0][y[0]] ^ key[4 * (2 + offset) + 0]] ^ key[
-				4 * (0 + offset) + 0]]
-			y[1] = twofish.sbox[0][twofish.sbox[0][twofish.sbox[1][y[1]] ^ key[4 * (2 + offset) + 1]] ^ key[
-				4 * (0 + offset) + 1]]
-			y[2] = twofish.sbox[1][twofish.sbox[1][twofish.sbox[0][y[2]] ^ key[4 * (2 + offset) + 2]] ^ key[
-				4 * (0 + offset) + 2]]
-			y[3] = twofish.sbox[0][twofish.sbox[1][twofish.sbox[1][y[3]] ^ key[4 * (2 + offset) + 3]] ^ key[
-				4 * (0 + offset) + 3]]
+			y[0] = twofish.sbox[1][twofish.sbox[0][twofish.sbox[0][y[0]] ^ key[4 * (2 + offset) + 0]] ^ key[4 * (0 + offset) + 0]]
+			y[1] = twofish.sbox[0][twofish.sbox[0][twofish.sbox[1][y[1]] ^ key[4 * (2 + offset) + 1]] ^ key[4 * (0 + offset) + 1]]
+			y[2] = twofish.sbox[1][twofish.sbox[1][twofish.sbox[0][y[2]] ^ key[4 * (2 + offset) + 2]] ^ key[4 * (0 + offset) + 2]]
+			y[3] = twofish.sbox[0][twofish.sbox[1][twofish.sbox[1][y[3]] ^ key[4 * (2 + offset) + 3]] ^ key[4 * (0 + offset) + 3]]
 		}
 		else {
 			panic('v_crypto/twofish: unreachable')

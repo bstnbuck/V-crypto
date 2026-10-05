@@ -29,7 +29,7 @@ fn test_aes_ige() {
 		0x20, 0x42, 0x65, 0x6E, 0x20, 0x67, 0x6F, 0x74, 0x20, 0x69, 0x74, 0x20, 0x72, 0x69, 0x67,
 		0x68, 0x74, 0x21, 0x0A]
 
-	block1 := aes.new_cipher(key1)
+	block1 := aes.new_cipher(key1)!
 	mut mode1 := new_ige(block1, iv1)!
 	mut dst1 := []u8{len: plain1.len}
 	mode1.encrypt_blocks(mut dst1, plain1)
@@ -37,7 +37,7 @@ fn test_aes_ige() {
 	mode1.decrypt_blocks(mut dst1, dst1.clone())
 	assert dst1 == plain1
 
-	block2 := aes.new_cipher(key2)
+	block2 := aes.new_cipher(key2)!
 	mut mode2 := new_ige(block2, iv2)!
 	mut dst2 := []u8{len: out2.len}
 	mode2.encrypt_blocks(mut dst2, plain2)

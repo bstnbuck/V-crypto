@@ -97,7 +97,7 @@ pub fn hexhash(s string) string {
 // write writes the contents of `p_` to the internal hash representation.
 pub fn (mut d Digest) write(p_ []u8) !int {
 	unsafe {
-		mut p := p_
+		mut p := p_.clone()
 		mut nn := p.len
 		d.tc += u64(nn)
 		if d.nx > 0 {
