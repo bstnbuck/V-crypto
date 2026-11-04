@@ -221,8 +221,8 @@ fn (mut c Cipher) salsa20_block() {
 	// where c=constant k=key b=blockcounter n=nonce
 	mut c_tmp := []u8{len: 8, init: 0}
 	binary.little_endian_put_u64(mut c_tmp, c.counter)
-	cp1 := binary.little_endian_u32(c_tmp[0..3])
-	cp2 := binary.little_endian_u32(c_tmp[4..7])
+	cp1 := binary.little_endian_u32(c_tmp[0..4])
+	cp2 := binary.little_endian_u32(c_tmp[4..8])
 
 	mut x := []u32{len: 16, init: 0}
 	x[0], x[1], x[2], x[3] = salsa20.cc0, c.key[0], c.key[1], c.key[2]
