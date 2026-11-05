@@ -36,7 +36,8 @@ mut:
 	counter u64
 	rounds  int = 20
 	// internal buffer for storing key stream results
-	block []u8 = []u8{len: salsa20.block_size}
+	block  []u8 = []u8{len: salsa20.block_size}
+	xsalsa bool // defines if XSalsa is used
 }
 
 // free the resources taken by the Cipher `c`. Dont use cipher after .free call
@@ -50,7 +51,7 @@ pub fn (mut c Cipher) free() {
 	}
 }
 
-// new_cipher creates a new Salsa20 stream cipher with the given 32 bytes key, a 8 or 24 bytes nonce and returns a new Cipher object or an error.
+// new_cipher creates a new Salsa stream cipher with the given 32 bytes key, a 8 or 24 bytes nonce and returns a new Cipher object or an error.
 // If 24 bytes of nonce are provided, the XSalsa20 construction will be used.
 pub fn new_cipher(key []u8, nonce []u8) !&Cipher {
 	mut c := &Cipher{}
@@ -83,19 +84,30 @@ pub fn (mut c Cipher) set_counter(ctr u64) {
 	c.counter = ctr
 }
 
-// rekey reinitializes a given Salsa20 instance with the provided key, nonce, different counter (>=0) and number of rounds (allowed are 8, 12, 20).
-pub fn (mut c Cipher) rekey(key []u8, nonce []u8, counter u64, rounds int) ! {
-	c.reset()
-
-	// set different amount of rounds
+// set_rounds sets the number of Salsa rounds (8, 12, 20 (default)) or XSalsa rounds (12, 20 (default))
+pub fn (mut c Cipher) set_rounds(rounds int) ! {
 	match rounds {
-		8, 12, 20 {
+		8 {
+			if c.xsalsa {
+				return error('v_crypto/salsa20: invalid amount of XSalsa rounds (12, 20): ${rounds}')
+			} else {
+				c.rounds = rounds
+			}
+		}
+		12, 20 {
 			c.rounds = rounds
 		}
 		else {
-			return error('v_crypto/salsa20: invalid amount of rounds (8, 12, 20): $rounds')
+			return error('v_crypto/salsa20: invalid amount of rounds (8, 12, 20): ${rounds}')
 		}
 	}
+}
+
+// rekey reinitializes a given (X)Salsa instance with the provided key, nonce, different counter (>=0) and number of rounds (allowed are 8, 12, 20 (default)).
+pub fn (mut c Cipher) rekey(key []u8, nonce []u8, counter u64, rounds int) ! {
+	c.reset()
+
+	c.set_rounds(rounds)!
 
 	c.init(key, nonce, counter)!
 }
@@ -109,6 +121,7 @@ fn (mut c Cipher) reset() {
 	c.nonce = []u32{len: 2, init: 0}
 	c.counter = u64(0)
 	c.rounds = 20
+	c.xsalsa = false
 }
 
 // init reinitializes Salsa20 instance with the provided key and nonce.
@@ -133,6 +146,7 @@ fn (mut c Cipher) init(key_ []u8, nonce_ []u8, counter u64) ! {
 		mut cnonce := []u8{len: salsa20.nonce_size}
 		_ := copy(mut cnonce[0..8], nonce[16..24])
 		nonce = cnonce.clone()
+		c.xsalsa = true
 	}
 
 	// setup salsa20 cipher key

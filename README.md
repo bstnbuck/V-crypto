@@ -40,6 +40,7 @@
 | **SHA256** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha256)]|
 | **SHA512** | hash-algorithm | high, daily use | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha512)]|
 | **SHA3** | hash-algorithm | moderate | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/sha3)]|
+| X.509 | encoding format | high | implemented :heavy_check_mark: [[Git](https://github.com/vlang/v/tree/master/vlib/crypto/x509)]|
 | Ascon | lightweight AEAD | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/ascon)] |
 | **ChaCha20** | symmetric stream cipher | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20)]|
 | **ChaCha20-Poly1305** | Authenticated encryption with associated data (AEAD) | high, daily use | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/chacha20poly1305)]|
@@ -49,7 +50,7 @@
 | SLH-DSA | post-quantum secure signature algorithm (aka. SPHINCS+; hash based) | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/slhdsa)]
 | SM4 | block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/vlib/x/crypto/sm4)]|
 
-> Last Update: 03-10-2026
+> Last Update: 02-11-2026
 
 ## Cryptographic algorithms and protocols (not officially) planned for V standard library
 
@@ -70,9 +71,8 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **RSA** | asymmetric crypto | high, daily use | (see [[1](https://github.com/vlang/v/discussions/12679)]), thirdparty, non standard :x: [[Git](https://github.com/LvMalware/vrsa-package)] |
 | **SSH** | network protocol | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]) :x: |
 | **TLS** | protocol for secure network communication | high, daily use | (see [[2](https://github.com/vlang/v/issues/8547)]), wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] [[Git](https://github.com/blackshirt/tls13)]|
-| x509 | encoding format | high | wrapper, thirdparty :yellow_circle: [[Git](https://github.com/vlang/v/tree/master/thirdparty/mbedtls)] |
 
-> Last Update: 03-10-2026
+> Last Update: 02-11-2026
 
 ## Additional cryptographic algorithms implemented/planned in V-crypto (this Repo)
 
@@ -96,7 +96,7 @@ The V wrapper libsodium [[Git](https://github.com/vlang/libsodium)] has some of 
 | **Twofisch** | symmetric block cipher | moderate | experimental :yellow_circle: [[Git](https://github.com/bstnbuck/V-crypto/tree/main/twofish)] |
 | **yescrypt** | hash-algorithm / key derivation function | high | :x: |
 
-> Last Update: 03-10-2026
+> Last Update: 04-11-2026
 ---
 ## v_crypto
 ### Installation
